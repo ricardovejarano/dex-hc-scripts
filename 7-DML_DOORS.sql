@@ -54,10 +54,10 @@ INSERT INTO [Value]
 		   ,[Data]
 		   ,[Id_Field])
 	   VALUES
-	  	   ('Puerta Interiores', '{"index":0,"title":"Puerta Interiores","imgUrl":"assets/images/doors/step1/puerta_interiores.png","selected":false, "unitPrice": 0}', (SELECT [Id] FROM [Field] WHERE [Name] = 'doorWindow' AND [Id_Step] = (SELECT [Id] FROM [Step] WHERE [Code] = 'dw_1_door_or_window'))),
-	  	   ('Ventana', '{"index":1,"title":"Ventana","imgUrl":"assets/images/doors/step1/ventana.png","selected":false, "unitPrice": 0}', (SELECT [Id] FROM [Field] WHERE [Name] = 'doorWindow' AND [Id_Step] = (SELECT [Id] FROM [Step] WHERE [Code] = 'dw_1_door_or_window'))),
-	  	   ('Puertaventana', '{"index":2,"title":"Puertaventana","imgUrl":"assets/images/doors/step1/puertaventana.png","selected":false, "unitPrice": 0}', (SELECT [Id] FROM [Field] WHERE [Name] = 'doorWindow' AND [Id_Step] = (SELECT [Id] FROM [Step] WHERE [Code] = 'dw_1_door_or_window'))),
-	  	   ('Puerta plegable', '{"index":3,"title":"Puerta plegable","imgUrl":"assets/images/doors/step1/puerta_plegable.png","selected":false, "unitPrice": 0}', (SELECT [Id] FROM [Field] WHERE [Name] = 'doorWindow' AND [Id_Step] = (SELECT [Id] FROM [Step] WHERE [Code] = 'dw_1_door_or_window')))
+	  	   ('Puerta Interiores', '{"index":0,"title":"Puerta Interiores","imgUrl":"assets/images/doors/step1/puerta_interiores.png","selected":false, "unitPrice": 0, "active": true}', (SELECT [Id] FROM [Field] WHERE [Name] = 'doorWindow' AND [Id_Step] = (SELECT [Id] FROM [Step] WHERE [Code] = 'dw_1_door_or_window'))),
+	  	   ('Ventana', '{"index":1,"title":"Ventana","imgUrl":"assets/images/doors/step1/ventana.png","selected":false, "unitPrice": 0, "active": true}', (SELECT [Id] FROM [Field] WHERE [Name] = 'doorWindow' AND [Id_Step] = (SELECT [Id] FROM [Step] WHERE [Code] = 'dw_1_door_or_window'))),
+	  	   ('Puertaventana', '{"index":2,"title":"Puertaventana","imgUrl":"assets/images/doors/step1/puertaventana.png","selected":false, "unitPrice": 0, "active": true}', (SELECT [Id] FROM [Field] WHERE [Name] = 'doorWindow' AND [Id_Step] = (SELECT [Id] FROM [Step] WHERE [Code] = 'dw_1_door_or_window'))),
+	  	   ('Puerta plegable', '{"index":3,"title":"Puerta plegable","imgUrl":"assets/images/doors/step1/puerta_plegable.png","selected":false, "unitPrice": 0, "active": true}', (SELECT [Id] FROM [Field] WHERE [Name] = 'doorWindow' AND [Id_Step] = (SELECT [Id] FROM [Step] WHERE [Code] = 'dw_1_door_or_window')))
 
 
 --Paso 2: Material
