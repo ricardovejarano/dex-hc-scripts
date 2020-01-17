@@ -535,6 +535,22 @@ INSERT INTO [Field]
 END
 GO
 
+--Values
+IF EXISTS (SELECT [Name] FROM [Value] WHERE [Id_Field] = (SELECT [Id] FROM [Field] WHERE [Name] = 'inside' AND [Id_Step] = (SELECT [Id] FROM [Step] WHERE [Code] = 'dw_6_inside')))
+BEGIN
+	DELETE FROM [Value] WHERE [Id_Field] = (SELECT [Id] FROM [Field] WHERE [Name] = 'inside' AND [Id_Step] = (SELECT [Id] FROM [Step] WHERE [Code] = 'dw_6_inside'))
+END
+GO
+
+INSERT INTO [Value]
+		   ([Name]
+		   ,[Data]
+		   ,[Id_Field])
+	   VALUES
+	  	   ('Solido', '{"index":0,"title":"Solido","imgUrl":"assets/images/doors/step6/solido.png","selected":false, "unitPrice": 0, "active": true}', (SELECT [Id] FROM [Field] WHERE [Name] = 'inside' AND [Id_Step] = (SELECT [Id] FROM [Step] WHERE [Code] = 'dw_6_inside'))),
+	  	   ('Entamborado', '{"index":1,"title":"Entamborado","imgUrl":"assets/images/doors/step6/entamborado.png","selected":false, "unitPrice": 0, "active": true}', (SELECT [Id] FROM [Field] WHERE [Name] = 'inside' AND [Id_Step] = (SELECT [Id] FROM [Step] WHERE [Code] = 'dw_6_inside')))
+
+
 --Paso 7: Marco
 IF NOT EXISTS (SELECT [Id] FROM [Step] WHERE [Code] = 'dw_7_frame')
 BEGIN
