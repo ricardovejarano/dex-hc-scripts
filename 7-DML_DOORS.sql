@@ -547,8 +547,8 @@ INSERT INTO [Value]
 		   ,[Data]
 		   ,[Id_Field])
 	   VALUES
-	  	   ('Solido', '{"index":0,"title":"Solido","imgUrl":"assets/images/doors/step6/solido.png","selected":false, "unitPrice": 0, "active": true}', (SELECT [Id] FROM [Field] WHERE [Name] = 'inside' AND [Id_Step] = (SELECT [Id] FROM [Step] WHERE [Code] = 'dw_6_inside'))),
-	  	   ('Entamborado', '{"index":1,"title":"Entamborado","imgUrl":"assets/images/doors/step6/entamborado.png","selected":false, "unitPrice": 0, "active": true}', (SELECT [Id] FROM [Field] WHERE [Name] = 'inside' AND [Id_Step] = (SELECT [Id] FROM [Step] WHERE [Code] = 'dw_6_inside')))
+	  	   ('Solido', '{"index":0,"title":"Solido","imgUrl":"assets/images/doors/step6/solido.png","selected":false, "features":"Resistencia superior al uso diario;Reduce la transmisión de sonido;Aumento de su privacidad","unitPrice": 0, "active": true}', (SELECT [Id] FROM [Field] WHERE [Name] = 'inside' AND [Id_Step] = (SELECT [Id] FROM [Step] WHERE [Code] = 'dw_6_inside'))),
+	  	   ('Entamborado', '{"index":1,"title":"Entamborado","imgUrl":"assets/images/doors/step6/entamborado.png","selected":false, "features":"Estructura liviana;Fácil manipulación", "unitPrice": 0, "active": true}', (SELECT [Id] FROM [Field] WHERE [Name] = 'inside' AND [Id_Step] = (SELECT [Id] FROM [Step] WHERE [Code] = 'dw_6_inside')))
 
 
 --Paso 7: Marco
