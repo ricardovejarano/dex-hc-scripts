@@ -577,3 +577,66 @@ INSERT INTO [Field]
            ('frame', 'simple', 'Marco', '', (SELECT [Id] FROM [Step] WHERE [Code] = 'dw_7_frame'))
 END
 GO
+
+--Values
+IF EXISTS (SELECT [Name] FROM [Value] WHERE [Id_Field] = (SELECT [Id] FROM [Field] WHERE [Name] = 'frame' AND [Id_Step] = (SELECT [Id] FROM [Step] WHERE [Code] = 'dw_7_frame')))
+BEGIN
+	DELETE FROM [Value] WHERE [Id_Field] = (SELECT [Id] FROM [Field] WHERE [Name] = 'frame' AND [Id_Step] = (SELECT [Id] FROM [Step] WHERE [Code] = 'dw_7_frame'))
+END
+GO
+
+DECLARE @id_field int
+DECLARE @id_parent int
+
+
+--Puertas de interior laminados
+
+SET @id_field = (SELECT [Id] FROM [Field] WHERE [Name] = 'frame' AND [Id_Step] = (SELECT [Id] FROM [Step] WHERE [Code] = 'dw_7_frame'))
+SET @id_parent = (SELECT [Id] FROM [Value] WHERE [Name] = 'Laminados' AND [Id_Field] = (SELECT [Id] FROM [Field] WHERE [Name] = 'material' AND [Id_Step] = (SELECT [Id] FROM [Step] WHERE [Code] = 'dw_2_material')))
+
+INSERT INTO [Value]
+		   ([Name]
+		   ,[Data]
+		   ,[Id_Field]
+           ,[Id_Parent])
+	   VALUES
+	  	   ('Aglomerado RH', '{"index":0,"title":"Aglomerado RH","imgUrl":"assets/images/doors/step7/laminados/color.png","selected":false, "unitPrice": 0, "features":"Aplica solo para puertas laminadas", "optionsCheck": [{"name": "8 cm", "value": 8, "checked": false}, {"name": "10 cm", "value": 10, "checked": false}, {"name": "12 cm", "value": 12, "checked": false}]}', @id_field, @id_parent)
+
+--Puertas de interior raices
+
+SET @id_field = (SELECT [Id] FROM [Field] WHERE [Name] = 'frame' AND [Id_Step] = (SELECT [Id] FROM [Step] WHERE [Code] = 'dw_7_frame'))
+SET @id_parent = (SELECT [Id] FROM [Value] WHERE [Name] = 'Raices' AND [Id_Field] = (SELECT [Id] FROM [Field] WHERE [Name] = 'material' AND [Id_Step] = (SELECT [Id] FROM [Step] WHERE [Code] = 'dw_2_material')))
+
+INSERT INTO [Value]
+		   ([Name]
+		   ,[Data]
+		   ,[Id_Field]
+           ,[Id_Parent])
+	   VALUES
+	  	   ('Pino', '{"index":0,"title":"Pino","imgUrl":"assets/images/doors/step7/pino/color.png","selected":false, "unitPrice": 0, "features":"Aplica solo para puertas en triplex decorativo pintado, HDF moldeado pintado y colección raíces", "optionsCheck": [{"name": "8 cm", "value": 8, "checked": false}, {"name": "10 cm", "value": 10, "checked": false}, {"name": "12 cm", "value": 12, "checked": false}]}', @id_field, @id_parent)
+
+--Puertas de interior HDF
+
+SET @id_field = (SELECT [Id] FROM [Field] WHERE [Name] = 'frame' AND [Id_Step] = (SELECT [Id] FROM [Step] WHERE [Code] = 'dw_7_frame'))
+SET @id_parent = (SELECT [Id] FROM [Value] WHERE [Name] = 'HDF' AND [Id_Field] = (SELECT [Id] FROM [Field] WHERE [Name] = 'material' AND [Id_Step] = (SELECT [Id] FROM [Step] WHERE [Code] = 'dw_2_material')))
+
+INSERT INTO [Value]
+		   ([Name]
+		   ,[Data]
+		   ,[Id_Field]
+           ,[Id_Parent])
+	   VALUES
+	  	   ('Pino', '{"index":0,"title":"Pino","imgUrl":"assets/images/doors/step7/pino/color.png","selected":false, "unitPrice": 0, "features":"Aplica solo para puertas en triplex decorativo pintado, HDF moldeado pintado y colección raíces", "optionsCheck": [{"name": "8 cm", "value": 8, "checked": false}, {"name": "10 cm", "value": 10, "checked": false}, {"name": "12 cm", "value": 12, "checked": false}]}', @id_field, @id_parent)
+
+--Puertas de interior triplex
+
+SET @id_field = (SELECT [Id] FROM [Field] WHERE [Name] = 'frame' AND [Id_Step] = (SELECT [Id] FROM [Step] WHERE [Code] = 'dw_7_frame'))
+SET @id_parent = (SELECT [Id] FROM [Value] WHERE [Name] = 'Triplex' AND [Id_Field] = (SELECT [Id] FROM [Field] WHERE [Name] = 'material' AND [Id_Step] = (SELECT [Id] FROM [Step] WHERE [Code] = 'dw_2_material')))
+
+INSERT INTO [Value]
+		   ([Name]
+		   ,[Data]
+		   ,[Id_Field]
+           ,[Id_Parent])
+	   VALUES
+	  	   ('Pino', '{"index":0,"title":"Pino","imgUrl":"assets/images/doors/step7/pino/color.png","selected":false, "unitPrice": 0, "features":"Aplica solo para puertas en triplex decorativo pintado, HDF moldeado pintado y colección raíces", "optionsCheck": [{"name": "8 cm", "value": 8, "checked": false}, {"name": "10 cm", "value": 10, "checked": false}, {"name": "12 cm", "value": 12, "checked": false}]}', @id_field, @id_parent)
