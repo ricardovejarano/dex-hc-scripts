@@ -69,6 +69,24 @@ BEGIN
 END
 GO
 
+--Carcenter
+IF NOT EXISTS (SELECT * 
+                 FROM INFORMATION_SCHEMA.TABLES 
+                 WHERE TABLE_SCHEMA = 'dbo' 
+                 AND  TABLE_NAME = 'Carcenter')
+BEGIN
+	CREATE TABLE [dbo].[Carcenter](
+		[Id] [int] IDENTITY(1,1),
+		[Name] [nvarchar](100) NOT NULL,
+        [Description] [nvarchar](100) NOT NULL,
+		[Zone] [int],
+		[Url] [nvarchar](1000) NOT NULL,
+		
+        CONSTRAINT PK_Carcenter PRIMARY KEY (ID) 
+	)
+END
+GO 
+
 --IdName
 IF NOT EXISTS (SELECT * 
                  FROM INFORMATION_SCHEMA.TABLES 
